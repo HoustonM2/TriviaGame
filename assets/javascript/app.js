@@ -8,7 +8,7 @@
 		},
 		{
 			question: 'Which team has the most Super Bowl wins?',
-			choice:   ['A.New England Patriots','BPittsburgh Steelers','C.San Francisco 49ers','D.Dallas Cowboys'],
+			choice:   ['A.New England Patriots','B.Pittsburgh Steelers','C.San Francisco 49ers','D.Dallas Cowboys'],
 			answer: 'Pittsburgh Steelers'
 			
 		},
@@ -113,11 +113,14 @@
 	
 	
 			$("#questionblock").html("<h2>" + pick.question + "</h2>");
-			for(var i = 0; i < pick.choice.length; i++) {
+
+				for(var i = 0; i < pick.choice.length; i++) {
+					
 				var userChoice = $("<div>");
 				userChoice.addClass("answerchoice");
 				userChoice.html(pick.choice[i]);
 				r
+
 				userChoice.attr("data-guessvalue", pick.choice[i]);
 				$("#answerblock").append(userChoice);
 	}
@@ -183,10 +186,13 @@
 		$("#reset").hide();
 		$("#answerblock").empty();
 		$("#questionblock").empty();
+
 		for(var i = 0; i < holder.length; i++) {
 			options.push(holder[i]);
 		}
+
 		runTimer();
+
 		displayQuestion();
 	
 	})
